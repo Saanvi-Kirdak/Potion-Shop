@@ -1,10 +1,26 @@
 console.log("Starting test");
-let i = new Ingredient(
+let mint = new Ingredient(
   "mint",
   45,
   60,
   "green"
 );
 
-console.log(i);
+let saffron = new Ingredient(
+  "saffron",
+  60,
+  75,
+  "yellow"
+);
+
+let water = new Ingredient(
+  "water",
+  10,
+  5,
+  "light blue"
+);
+
+console.log(mint);
+console.log(saffron);
+console.log(water);
 console.log("Test complete");
