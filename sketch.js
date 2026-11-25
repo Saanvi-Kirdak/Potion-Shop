@@ -18,6 +18,5 @@ function draw() {
   imageMode(CORNER);
   image(cafe,0,0);
   image(counter,0,0);
-  imageMode(CENTER);
-  image(goo,250,200);
+  gooShow();
 }
