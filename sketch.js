@@ -19,4 +19,17 @@ function draw() {
   image(cafe,0,0);
   image(counter,0,0);
   gooShow();
+// test grid
+  const cube = 50
+const columns = Math.floor(width / cube);
+const rows = Math.floor(height / cube);
+
+for (let row = 0; row < rows; row++){
+    for (let col = 0; col < columns; col++){
+        stroke(200);
+        line(col * cube, 0, col * cube, height);
+        line(0, row * cube, width, row * cube);
+    }
+}
+
 }
