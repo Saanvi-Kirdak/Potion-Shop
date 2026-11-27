@@ -1,31 +1,54 @@
-let gooX = 0;
-let gooY = 0;
 
-//im sure there's an easier way to do this
 
-let gooBox = {
-    gooMinX: 450,
-    gooMaxX: 500,
-    gooMinY: 250,
-    gooMaxY: 300,
-}
+class Ingredient{
+    constructor(img,x,y){
+        this.img = img;
+        this.x = x;
+        this.y = y;
 
-let saffronBox = {
-    safMinX: 450,
-    safMaxX: 500,
-    safMinY: 
-}
-
-function gooShow(){
-    if(mouseIsPressed){
+        this.boxX = x;
+        this.boxY = y;
+        this.isDragging = false;
+    }
+show(){
+    if(this.isDragging){
     imageMode(CENTER);
-    image(goo, gooX, gooY);
+    image(this.img, this.x, this.y);
 }
 }
 
-function mouseDragged() {
-    imageMode(CENTER);
-        image(goo, gooX, gooY);
-        gooX = mouseX - 60;
-        gooY = mouseY - 10;
+clicked(){
+    if(dist(mouseX, mouseY, this.boxX, this.boxY) <= 30){
+        this.isDragging = true;
+    }
+}
+dragged(){
+    if(this.isDragging){
+        this.x = mouseX - 60;
+        this.y = mouseY - 10;
+    }
+}
+
+release(){
+    this.isDragging = false;
+
+    this.x = this.boxX;
+    this.y = this.boxY;
+}
+
+}
+
+function mousePressed(){
+    gooArea.clicked();
+    safArea.clicked();
+}
+
+function mouseDragged(){
+    gooArea.dragged();
+    safArea.dragged();
+}
+
+function mouseReleased(){
+    gooArea.release();
+    safArea.release();
 }

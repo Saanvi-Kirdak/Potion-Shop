@@ -1,6 +1,9 @@
 let cafe;
 let counter;
 let goo;
+let saf;
+let gooArea;
+let safArea;
 // asset images & sizing (if you mess with the sizing too much it will look fuzzy
 //instead of pixely)
 async function setup() {
@@ -11,6 +14,11 @@ async function setup() {
   counter.resize(500,400);
   goo = await loadImage('/assets/realGoo.png');
   goo.resize(400,400);
+  saf = await loadImage('/assets/saffron.png');
+  saf.resize(400,400);
+  
+  gooArea = new Ingredient(goo, 470, 275);
+  safArea = new Ingredient(saf, 470, 325);
   
 }
   
@@ -18,7 +26,8 @@ function draw() {
   imageMode(CORNER);
   image(cafe,0,0);
   image(counter,0,0);
-  gooShow();
+  gooArea.show();
+  safArea.show();
 // test grid
   const cube = 50
 const columns = Math.floor(width / cube);
