@@ -8,6 +8,8 @@ let eyes;
 let sugar;
 let blood;
 let water;
+let cin;
+let cinArea;
 let gooArea;
 let safArea;
 let mintArea;
@@ -43,6 +45,8 @@ async function setup() {
   blood.resize(400,400);
   water = await loadImage('/assets/water.png');
   water.resize(400,400);
+  cin = await loadImage('/assets/cinamon.png');
+  cin.resize(400,400);
   waterArea = new Ingredient(water, 25, 325);
   bloodArea = new Ingredient(blood, 80, 325);
   sugarArea = new Ingredient(sugar, 375, 310);
@@ -51,6 +55,7 @@ async function setup() {
   gooArea = new Ingredient(goo, 470, 275);
   safArea = new Ingredient(saf, 470, 325);
   lizzardArea = new Ingredient(lizzard, 250, 275);
+  cinArea = new Ingredient(cin, 425, 325);
   
 }
   
@@ -66,6 +71,7 @@ function draw() {
   sugarArea.show();
   bloodArea.show();
   waterArea.show();
+  cinArea.show();
 // test grid
   const cube = 50
 const columns = Math.floor(width / cube);

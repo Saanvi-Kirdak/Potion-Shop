@@ -47,6 +47,7 @@ function mousePressed(){
     sugarArea.clicked();
     bloodArea.clicked();
     waterArea.clicked();
+    cinArea.clicked();
 }
 
 function mouseDragged(){
@@ -58,6 +59,7 @@ function mouseDragged(){
     sugarArea.dragged();
     bloodArea.dragged();
     waterArea.dragged();
+    cinArea.dragged();
 }
 
 function mouseReleased(){
@@ -69,4 +71,5 @@ function mouseReleased(){
     sugarArea.release();
     bloodArea.release();
     waterArea.release();
+    cinArea.release();
 }
