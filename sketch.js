@@ -9,6 +9,14 @@ let sugar;
 let blood;
 let water;
 let cin;
+let bearLady;
+let buff;
+let buffLady;
+let dogLady;
+let hatLady;
+let potionLady;
+let rabbitLady;
+let strangeLady;
 let cinArea;
 let gooArea;
 let safArea;
@@ -27,6 +35,20 @@ async function setup() {
   createCanvas(500, 400);
   cafe = await loadImage('/assets/realcafe.jpg');
   cafe.resize(500,400);
+  bearLady = await loadImage('/assets/bearLady.png');
+  bearLady.resize(250,250);
+  buffLady = await loadImage('/assets/buffLady.png');
+  buffLady.resize(350,250);
+  dogLady = await loadImage('/assets/dogLady.png');
+  dogLady.resize(250,250);
+  hatLady = await loadImage('/assets/hatLady.png');
+  hatLady.resize(250,250);
+  potionLady = await loadImage('/assets/potionLady.png');
+  potionLady.resize(250,250);
+  rabbitLady = await loadImage('/assets/rabbitLady.png');
+  rabbitLady.resize(300,375);
+  strangeLady = await loadImage('/assets/strangeLady.png');
+  strangeLady.resize(220,250);
   counter = await loadImage('/assets/realCounter.png');
   counter.resize(500,400);
   goo = await loadImage('/assets/realGoo.png');
@@ -56,12 +78,32 @@ async function setup() {
   safArea = new Ingredient(saf, 470, 325);
   lizzardArea = new Ingredient(lizzard, 250, 275);
   cinArea = new Ingredient(cin, 425, 325);
+  buff = new Customer(buffLady);
+
+  customerImages = [
+    bearLady,
+    buffLady,
+    dogLady,
+    hatLady,
+    potionLady,
+    rabbitLady,
+    strangeLady
+  ];
+  newCustomer();
+  
   
 }
   
 function draw() {
   imageMode(CORNER);
   image(cafe,0,0);
+  if(customer){
+    customer.motion();
+    if(customer.potionCompleted){
+      newCustomer();
+    }
+  }
+  imageMode(CORNER);
   image(counter,0,0);
   gooArea.show();
   safArea.show();
@@ -72,17 +114,4 @@ function draw() {
   bloodArea.show();
   waterArea.show();
   cinArea.show();
-// test grid
-  const cube = 50
-const columns = Math.floor(width / cube);
-const rows = Math.floor(height / cube);
-
-for (let row = 0; row < rows; row++){
-    for (let col = 0; col < columns; col++){
-        stroke(200);
-        line(col * cube, 0, col * cube, height);
-        line(0, row * cube, width, row * cube);
-    }
-}
-
 }

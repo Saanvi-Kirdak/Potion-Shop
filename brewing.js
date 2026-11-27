@@ -39,6 +39,8 @@ release(){
 }
 
 function mousePressed(){
+customer.clicked();
+
     gooArea.clicked();
     safArea.clicked();
     mintArea.clicked();
