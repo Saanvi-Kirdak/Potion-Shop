@@ -41,14 +41,32 @@ release(){
 function mousePressed(){
     gooArea.clicked();
     safArea.clicked();
+    mintArea.clicked();
+    lizzardArea.clicked();
+    eyesArea.clicked();
+    sugarArea.clicked();
+    bloodArea.clicked();
+    waterArea.clicked();
 }
 
 function mouseDragged(){
     gooArea.dragged();
     safArea.dragged();
+    mintArea.dragged();
+    lizzardArea.dragged();
+    eyesArea.dragged();
+    sugarArea.dragged();
+    bloodArea.dragged();
+    waterArea.dragged();
 }
 
 function mouseReleased(){
     gooArea.release();
     safArea.release();
+    mintArea.release();
+    lizzardArea.release();
+    eyesArea.release();
+    sugarArea.release();
+    bloodArea.release();
+    waterArea.release();
 }
